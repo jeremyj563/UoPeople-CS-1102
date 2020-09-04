@@ -1,3 +1,11 @@
+<style>
+  pre {
+    width: 400px;
+    line-height: 15px;
+    color: #ff0066;
+  }
+</style>
+
 <p>
   Syntax is a set of rules that must be followed by the programmer in order for the code to be readable by the language interpreter or compiler. In the case of Java, the compiler must be able to read and parse the code in order to produce bytecodes
   to later be compiled by the Java Virtual Machine (JVM)'s Just In Time (JIT) compiler.
@@ -7,8 +15,7 @@
   Here is an example of a syntactically correct java program. This code will compile and run just fine in any correctly implemented Java compiler:
 </p>
 
-<p>
-<pre style="width: 400px; line-height: 15px; color: #003366;">
+<pre>
 public class JavaFiddle
 {
     public static void main(String[] args) {
@@ -21,44 +28,40 @@ public class JavaFiddle
     }
 }
 </pre>
-</p>
 
-<br/>
+<br>
+
 <p>
     Next is an example of some Java code with bad syntax. It will not be possible to compile this code for several reasons including no encapsulating scope (missing curly braces), incorrect case for both the "System" namespace and "String" type, and the use of single quotes (instead of double quotes) to wrap the string literals:
 </p>
 
-<p>
-<pre style="width: 400px; line-height: 15px; color: #003366;">
+<pre>
 string name = 'peeps';
 system.out.println('Hi ' + name + '!');
 </pre>
-</p>
 
-<br/>
+<br>
+
 <p>
     Semantics refer to code that is either written correctly to arrive at the right output, or written incorrectly and arrives at the wrong output. In other words, a semantically correct program will always produce the correct solution. For example, a Java function that is supposed to add two integers and return the result could be written like this:
 </p>
 
-<p>
-<pre style="width: 400px; line-height: 15px; color: #003366;">
+<pre>
 public Integer add(Integer x, Integer y) {
     Integer sum = x + y;
     return sum;
 }
 </pre>
-</p>
 
-<br/>
+<br>
+
 <p>
     A semantically incorrect version of the "add" function might be written as follows. Notice how the code is <b>syntactically</b> correct (i.e. the code will successfully compile) but it is not <b>semantically</b> correct (the function performs subtraction instead of addition, thereby arriving at the wrong answer):
 </p>
 
-<p>
-<pre style="width: 400px; line-height: 15px; color: #003366;">
+<pre>
 public Integer add(Integer x, Integer y) {
     Integer sum = x - y;
     return sum;
 }
 </pre>
-</p>
