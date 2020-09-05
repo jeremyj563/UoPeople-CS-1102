@@ -1,0 +1,44 @@
+<p>Note: <i>This is simply a suggestion based on my personal experience but I think most who actually give VSCode a try will agree!</i></p>
+<p>So far the course content is instructing us to setup the Eclipse interactive development environment (IDE) to use for all of our code editing. If you want to try a different editor that has more modern features and a much higher adoption rate, then I
+    would <b>strongly</b> recommend installing Microsoft Visual Studio Code (VSCode). Below are some simple instructions for getting setup depending on your computer's operating system (I apologize in advance, I do not own a Mac so I am unable to provide exact steps for macOS).</p>
+<p><b>Microsoft Windows</b></p>
+<p>
+</p>
+<ol>
+    <b>Install the <a href="https://chocolatey.org/install">Chocolatey package manager</a></b>
+    <ul>
+      <li>open powershell and run:</li>
+        <li><code>PS &gt;&nbsp;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></li>
+    </ul>
+  <b>Install OpenJDK 11 and VSCode</b>
+  <ul>
+    <li><code>PS > choco install -y ojdkbuild11 vscode</code></li>
+  </ul>
+</ol>
+
+<br>
+
+<p><b>Ubuntu Linux</b></p>
+<ol>
+  <b>Install OpenJDK 11 using APT</b>
+  <ul>
+    <li><code>$ sudo apt install -y openjdk-11-jdk</code></li>
+  </ul>
+  <b>Install VSCode using Snap</b>
+  <ul>
+    <li><code>$ sudo snap install --classic code</code></li>    
+  </ul>
+</ol>
+
+<br>
+
+<p>
+  <b>Important:</b>
+</p>
+<p>
+  After installation is complete simply open VSCode and navigate to:
+  <ul>
+    <li>Extensions <b>></b> search 'java' <b>></b> Java Extension Pack <b>></b> Install</li>
+</ul>
+This will the Java extensions pack for VSCode that will add support for all of the necessary features for working with Java such as debugging, code navigation, auto completion, refactoring, code snippets, etc...
+</p>
