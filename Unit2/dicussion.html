@@ -1,0 +1,118 @@
+<h5>
+  Example 1: <b>while</b>
+</h4>
+<p>
+  In this example we can see the difference between <code>while</code> and <code>do-while</code>. With <code>while</code> the boolean expression is evaluated before iterating the block but with <code>do-while</code> the boolean expression is not evaluated until after the first iteration of the block. We can also see one of the benefits of <code>for</code> is that we can define the iterating variable within the <code>for</code> statement itself.
+</p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Example 1: while (will loop only once)</span>
+<span style="color: #2b91af">boolean</span> loop = <span style="color: #0000ff">true</span>; <span style="color: #2b91af">int</span> count = 1;
+<span style="color: #0000ff">while</span> (loop) {
+    System.out.println(<span style="color: #a31515">&quot;While - count: &quot;</span> + count++);
+    loop = <span style="color: #0000ff">false</span>;
+}
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent do-while (will loop twice)</span>
+<span style="color: #2b91af">boolean</span> loop = <span style="color: #0000ff">true</span>; <span style="color: #2b91af">int</span> count = 1;
+<span style="color: #0000ff">do</span> {
+    System.out.println(<span style="color: #a31515">&quot;Do-While - count: &quot;</span> + count++);
+    loop = <span style="color: #0000ff">false</span>;
+} <span style="color: #0000ff">while</span> (loop);
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent for (with in-line variable delcaration)</span>
+<span style="color: #2b91af">boolean</span> loop = <span style="color: #0000ff">true</span>;
+<span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> count = 1; loop; count++) {
+    System.out.println(<span style="color: #a31515">&quot;For - count: &quot;</span> + count++);
+    loop = <span style="color: #0000ff">false</span>;
+}
+</pre></td></tr></table>
+<br>
+<h5>
+  Example 2: <b>do-while</b>
+</h4>
+<p>
+  Here we can see more of the benefits of using <code>for</code>. Not only can we define the iterating variable in-line but we can also increment the value as well - all within a single statement.
+</p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Example 2: do-while</span>
+<span style="color: #2b91af">int</span> count = 1;
+<span style="color: #0000ff">do</span> {
+    System.out.println(<span style="color: #a31515">&quot;Do-While - count: &quot;</span> + count++);
+} <span style="color: #0000ff">while</span> (count &lt; 10);
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent while</span>
+<span style="color: #2b91af">int</span> count = 1;
+<span style="color: #0000ff">while</span> (count &lt; 10) {
+    System.out.println(<span style="color: #a31515">&quot;While - count: &quot;</span> + count++);
+}
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent for</span>
+<span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> count = 1; count &lt; 10; count++) {
+    System.out.println(<span style="color: #a31515">&quot;For - count: &quot;</span> + count);
+}
+</pre></td></tr></table>
+<br>
+<h5>
+  Example 3: <b>for</b>
+</h4>
+<p>
+  Finally we have <code>for</code>. In this example we can see plainly how using <code>for</code> helps to not pollute the outer scope by, once again, declaring the iterating variable in-line.
+</p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// Example 3: for</span>
+<span style="color: #0000ff">for</span> (<span style="color: #2b91af">int</span> count = 10; count &gt;= 5; count--) {
+    System.out.println(<span style="color: #a31515">&quot;For - count: &quot;</span> + count);
+}
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent while</span>
+<span style="color: #2b91af">int</span> count = 10;
+<span style="color: #0000ff">while</span> (count &gt;= 5) {
+    System.out.println(<span style="color: #a31515">&quot;While - count: &quot;</span> + count--);
+}
+</pre></td></tr></table>
+<p></p>
+<table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000">// equivalent do-while</span>
+<span style="color: #2b91af">int</span> count = 10;
+<span style="color: #0000ff">do</span> {
+    System.out.println(<span style="color: #a31515">&quot;Do-While - count: &quot;</span> + count--);
+} <span style="color: #0000ff">while</span> (count &gt;= 5);
+</pre></td></tr></table>
