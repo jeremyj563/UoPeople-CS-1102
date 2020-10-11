@@ -14,9 +14,13 @@ public class MouseWhisperer extends JFrame implements MouseListener {
         addMouseListener(this);
         setVisible(true);
     }
-    public void mouseClicked(MouseEvent e) { setTitle("OUCH"); }
+    public void mouseClicked(MouseEvent e) { 
+        setTitle("OUCH"); 
+    }
     public void mousePressed(MouseEvent e) { setTitle("LET GO"); }
-    public void mouseReleased(MouseEvent e) { setTitle("WHEW"); }
+    public void mouseReleased(MouseEvent e) { 
+        setTitle("WHEW"); 
+    }
     public void mouseEntered(MouseEvent e) { setTitle("I SEE YOU"); }
     public void mouseExited(MouseEvent e) { setTitle("COME CLOSER"); }
     public static void main(String[] args) { new MouseWhisperer(); }

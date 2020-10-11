@@ -1,0 +1,105 @@
+<h4>Explanation of what the program does</h4>
+<div class="text_to_html">
+    <ul>
+        <li>Upon execution a small empty window is created with a title bar that is set to the text <b>COME CLOSER</b>
+        </li>
+        <li>When the user hovers the mouse cursor over the window, the title text is set to <b>I SEE YOU</b></li>
+        <li>
+            If the mouse is clicked while still hovering over the window, the title text is set to <b>LET GO</b>
+            <ul>
+                <li>The title text is then set to <b>WHEW</b> when the mouse button is released</li>
+            </ul>
+        </li>
+        <li>Immediately after clicking in the window, the title text is set to <b>OUCH</b></li>
+    </ul>
+</div>
+<br>
+<h4>Line-by-line explanation of how the program works</h5>
+<h5>Class definition</h5>
+<p>
+<ul>
+    <li>
+        The <code>MouseWhisperer</code> class extends (inherits from) the <code>javax.swing.JFrame</code> class
+        <ul>
+            <li>Any exposed code belonging to the <code>JFrame</code> class (and its ancestors) is available to the
+                <code>MouseWhisperer</code> class</li>
+        </ul>
+    </li>
+    <li>
+        The <code>MouseWhisperer</code> class also implements the <code>java.awt.event.MouseListener</code> interface
+        <ul>
+            <li><code>MouseWhisperer</code> must provide implementations for all member definitions belonging to the
+                <code>MouseListener</code> interface (and its ancestors)</li>
+        </ul>
+    </li>
+</ul>
+</p>
+<h5>Private field definitions</h5>
+<p>
+<ul>
+    <li>The single private field <code>serialVersionUID</code> of type <code>long</code> is correctly declared using the
+        <code>final</code> keyword <a href="https://www.baeldung.com/java-final">making it a write-once field</a></li>
+    <li>The <code>serialVersionUID</code> is only useful as <a href="https://www.baeldung.com/java-serial-version-uid">a
+            unique identifier when serializing a class instance</a> and therefore does not serve any purpose for the
+        actual functionality of this example program</li>
+</ul>
+</p>
+<h5>Class constructor</h5>
+<p>
+<ul>
+    <li>
+        The <code>MouseWhisperer()</code> constructor calls the <code>JFrame(String title)</code> base class constructor
+        using <code>super()</code> which in-turn creates a new instance of the <code>java.awt.Frame</code> class with
+        the specified title
+    </li>
+    <li>The <code>java.awt.Window.setSize()</code> setter is called passing in a <code>width</code> of <code>300</code>
+        and a <code>height</code> of <code>100</code> which, of course, sets the size of the new window accordingly</li>
+    <li>The <code>java.swing.JFrame.setDefaultCloseOperation()</code> setter is called passing in the
+        <code>JFrame.EXIT_ON_CLOSE</code> setting which causes the application to terminate once the window is closed
+    </li>
+    <li>
+        The <code>java.awt.Component.addMouseListener()</code> method is called which requires an object instance that
+        implements the <code>MouseListener</code> interface as its sole arguement
+        <ul>
+            <li>The argument being passed in is <code>this</code> which is simply a reference to the current instance of
+                the <code>MouseWhisperer</code> class, which is a valid implementation of the <code>MouseListener</code>
+                interface</li>
+        </ul>
+    </li>
+    <li>The <code>java.awt.Window.setVisible()</code> setter is called passing in <code>true</code> which obviously
+        causes the window to be visible to the user</li>
+</ul>
+</p>
+<h5>Event handler definitions and implementations</h5>
+<p>
+<ul>
+    <li>
+        All five methods declared in the <code>MouseListener</code> interface are implemented
+        <ul>
+            <li><code>mouseClicked(MouseEvent e)</code></li>
+            <li><code>mousePressed(MouseEvent e)</code></li>
+            <li><code>mouseReleased(MouseEvent e)</code></li>
+            <li><code>mouseEntered(MouseEvent e)</code></li>
+            <li><code>mouseExited(MouseEvent e)</code></li>
+        </ul>
+    </li>
+    <li>Each of these method implementations simply call the <code>java.awt.Frame.setTitle()</code> setter and pass in
+        the appropriate title text string as described above</li>
+    <li>
+        The <code>setTitle()</code> setter is made available to the <code>MouseWhisperer</code> class through the
+        following inheritance hierarchy:
+        <ul>
+            <li>The <code>MouseWhisperer</code> class extends the <code>javax.swing.JFrame</code> class</li>
+            <li>The <code>JFrame</code> class extends the <code>java.awt.Frame</code> class</li>
+            <li>The <code>Frame</code> class contains the <code>setTitle()</code> method</li>
+        </ul>
+    </li>
+</ul>
+</p>
+<h5>Program entrypoint</h5>
+<p>
+<ul>
+    <li>The <code>static</code> <code>MouseWhisperer.main()</code> method simply creates a new instance of the
+        <code>MouseWhisperer</code> class which causes the parameterless class constructor to be executed</li>
+</ul>
+</p>
