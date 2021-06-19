@@ -1,13 +1,14 @@
 package test;
+
 public class Food {
     static int count;
     private String flavor = "sweet";
-    Food() { count++; }
+    Food(String s) { flavor = s; }
     void setFlavor(String s) { flavor = s; }
     String getFlavor() { return flavor; }
     static public void main(String[] args) {
-        Food pepper = new Food();
-        new Food();
-        System.out.println(pepper.count);
+        Food pepper = new Food("spicy");
+        Food chile = new Food("spicy");
+        System.out.println(pepper == chile);
     }
 }
